@@ -225,7 +225,3 @@ temp = {
 		}
 	]
 }
-# Send to slack
-
-
-print(users)
