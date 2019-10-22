@@ -1,4 +1,5 @@
-import requests
+import requests, json
+from sender.slack import postAlarm
+from crontab import CronTab
 
-print(response)
-print(response.text)
+cron = CronTab(tab="""  * * * * * sender/slack.py""")

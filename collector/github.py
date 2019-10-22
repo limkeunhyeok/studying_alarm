@@ -36,7 +36,7 @@ def getUsersCommit():
     return users
 
 # 사용자별 commit 수
-def commitCount(users):
+def getCommitCount(users):
     count = {}
     totalCount = 0
     for user in users:
@@ -44,7 +44,3 @@ def commitCount(users):
         totalCount += len(users[user])
     count['total'] = totalCount
     return count
-
-a = commitCount(getUsersCommit())
-print(a)
-print(getUsersCommit())
