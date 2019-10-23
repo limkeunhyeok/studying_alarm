@@ -1,5 +1,10 @@
-import requests, json
+import schedule, time
 from sender.slack import postAlarm
-from crontab import CronTab
 
-cron = CronTab(tab="""  * * * * * sender/slack.py""")
+def job():
+    postAlarm()
+
+schedule.every().monday.at("09:00").do(job)
+while True:
+    schedule.run_pending()
+    time.sleep(1)
